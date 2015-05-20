@@ -13,7 +13,7 @@ function loadPlugins(names, paths, initFnName, options) {
 	
 	pluginNames.filter(function (name) {
 		return plugins[name].hasOwnProperty(initFnName);
-	}).reduce(function (name) {
+	}).forEach(function (name) {
 		var plugin = plugins[name];
 		initializedPlugins[name] = plugin[initFnName](eventEmitter, options) || plugin;
 	});
