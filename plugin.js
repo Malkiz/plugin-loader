@@ -17,7 +17,5 @@ function loadPlugins(names, paths, options) {
 		initializedPlugins[name] = init(name, plugin) || plugin;
 	});
 	
-	return {
-		plugins : initializedPlugins
-	};
+	return initializedPlugins;
 }
